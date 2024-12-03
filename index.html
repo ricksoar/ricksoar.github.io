@@ -1,31 +1,203 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-    <link href="bootstrap5.1.1.css" rel="stylesheet" />
-</head>
-<body>
-    <div>
-        <nav class="navbar navbar-expand-sm bg-light">
+<html lang="zh-TW">
 
-            <div class="container-fluid">
-                <!-- Links -->
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 1</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESUME</title>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #c9d1d9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #24292e;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #0d1117;
+            color: #58a6ff;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .header p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            opacity: 0;
+            animation-duration: 0.8s;
+            animation-fill-mode: forwards;
+        }
+
+        /* 單數項目從左邊淡入 */
+        .section:nth-child(odd) {
+            transform: translateX(-50px);
+            animation-name: fadeInLeft;
+        }
+
+        /* 雙數項目從右邊淡入 */
+        .section:nth-child(even) {
+            transform: translateX(50px);
+            animation-name: fadeInRight;
+        }
+
+        .section h2 {
+            border-left: 5px solid #58a6ff;
+            padding-left: 15px;
+            margin-bottom: 15px;
+            color: #58a6ff;
+        }
+
+        p,
+        ul {
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #0d1117;
+            margin: 8px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #58a6ff;
+            transition: background 0.3s ease;
+        }
+
+        li:hover {
+            background: #161b22;
+        }
+
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+
+        /* 延遲動畫，使各部分依次出現 */
+        .section:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .section:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .section:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .section:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>蔡宗煒</h1>
+            <p>工程師</p>
+        </div>
+        <div class="content">
+            <div class="section">
+                <h2>個人簡介</h2>
+                <p>擁有 10 年軟體開發經驗，熟悉前後端技術，熱愛研究新技術並應用於實際專案中。</p>
+            </div>
+            <div class="section">
+                <h2>工作經歷</h2>
+                <ul>
+                    <li>
+                        <strong>資訊中心工程師</strong>，東台精機 (2011/07 - 至今)
+                        <p>資訊系統規劃及開發</p>
+                        <p>新舊系統維運</p>
+                        <p>資料庫規劃</p>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 3</a>
+                    <li>
+                        <strong>Web 開發工程師</strong>，英寶科技 (2010/3~2011/6)
+                        <p>派駐台積電三廠廠務部進行系統開發。主要是以ASP.NET C# 搭配資料庫進行開發。</p>
                     </li>
                 </ul>
             </div>
+            <div class="section">
+                <h2>教育背景</h2>
+                <p><strong>崑山科技大學</strong>，資訊工程學系 (2005 - 2007)</p>
 
-        </nav>
+            </div>
+            <div class="section">
+                <h2>專業技能</h2>
+                <ul>
+                    <li>前端技術：HTML5、CSS3、JavaScript、Vue.js</li>
+                    <li>後端技術：ASP.NET C#、Node.js、Express、Python、</li>
+                    <li>資料庫：MS SQL、SQLite、PostgreSQL、MongoDB、AS400</li>
+                    <li>版本控制：Git、GitHub</li>
+                    <li>其他技能：AI(ChatGPT)、RESTful API 開發、PowerBI(資料可視化)</li>
+                </ul>
+            </div>
+        </div>
     </div>
-
 </body>
+
 </html>
